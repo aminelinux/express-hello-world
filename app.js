@@ -15,13 +15,25 @@ const html = `
     <title>Effets divers en Javascript</title>
     <script type="text/javascript">
 function setColor (color) {
-    document.getElementById("body").style.backgroundColor = color; 
+  if (color == 'black') {
+    objet = document.getElementById("para")
+    objet.innerHTML =
+      '<button id="rouge" onclick="setColor(\'red\');">rouge</button>' +
+      '<button id="vert" onclick="setColor(\'green\');">vert</button>' +
+      '<button id="bleu" onclick="setColor(\'blue\');">bleu</button>' +
+      '<button id="blanc" onclick="setColor(\'white\');">blanc</button>' +
+      ' <i>Nouveau contenu</i> ' +
+      '<button id="gris" onclick="setColor(\'gray\');">gris</button>';
+  }
+  else {
+    document.getElementById("body").style.backgroundColor = color;
+  }
   return 0;
 }
     </script>
   </head>
 <body id="body">
-  <p>
+  <p id="para">
     <button id="rouge" onclick="setColor('red');">rouge</button>
     <button id="vert" onclick="setColor('green');">vert</button>
     <button id="bleu" onclick="setColor('blue');">bleu</button>
